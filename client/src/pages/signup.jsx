@@ -16,6 +16,7 @@ import { useEffect,useState } from 'react';
 import Script from 'next/script';
 import jwt_decode from "jwt-decode"
 import Router from 'next/router';
+import axios from 'axios';
 
 function Copyright(props) {
   return (
@@ -34,12 +35,14 @@ const theme = createTheme();
 
 export default function SignIn() {
   const [user, setUser] = useState({})
- 
 
   function handleCallbackResponse(response) {
     console.log("Encoded JWT ID token: " + response.credential)
     var userObject = jwt_decode(response.credential);
     console.log(userObject);
+    axios.post('http://localhost:8000/createuser',userObject).then((res)=>{
+      console.log(res)
+    })
     setUser(userObject)
     Router.push('/title')
   }
