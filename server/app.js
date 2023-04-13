@@ -4,7 +4,10 @@ const express = require('express')
 const app = express()
 const prisma = require('./db/connection')
 const createuserRouter = require('./routes/createuser')
+const cors = require('cors')
+app.use(cors())
 app.use(express.json());
+
 
 // const { PrismaClient } = require('@prisma/client')
 
