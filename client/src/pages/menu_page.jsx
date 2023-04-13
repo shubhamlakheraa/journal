@@ -1,9 +1,21 @@
 import Link from "next/link"
 import Image from "next/image"
-import styles from '@/styles/Home.module.css'
+import styles from "@/styles/Home.module.css"
 import { Roboto } from "next/font/google"
 import { images } from "../../public/assets_export"
-import Notion from "@/components/notionEditor"
+
+// import Notion from "@/components/notionEditor"
+// import EditablePage from "@/components/editablePage"
+// import EditorJ from "@/components/editorJS"
+import dynamic from "next/dynamic"
+// import Blocked from "@/components/blocked"
+
+// const EditorJ = dynamic(import('@/components/editorJS'), {
+//   ssr: false,
+//   // loading: () => <p>Loading ...</p>
+// })
+import Tiptap from "@/components/itr"
+
 const roboto = Roboto({
     weight: '400',
     subsets: ['latin'],
@@ -12,8 +24,8 @@ const roboto = Roboto({
 export default function MenuPage(){
     return (
       <>
-      {/* <div className={styles.content}> */}
-      {/* <div className={styles.drawer}>
+      <div className={styles.constent}>
+      <div className={styles.drawer}>
           <div className={styles.container}>
             <h2>Shubham</h2>
             <div className={styles.featuresdiv}>
@@ -40,10 +52,19 @@ export default function MenuPage(){
               <Image src={images.add} id={styles.addbutton} />
             </div>
           </div>
-        </div> */}
+        </div>
 
        
-        <Notion />
+        {/* <Notion /> */}
+        {/* <EditablePage /> */}
+        {/* <div id="editor-container"> */}
+        {/* <EditorJ /> */}
+        {/* <div className={styles.blocked}>
+        <Blocked />
+        </div> */}
+       
+       <Tiptap />
+       </div>
         
       
         

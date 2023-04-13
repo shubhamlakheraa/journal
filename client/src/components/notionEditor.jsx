@@ -1,5 +1,5 @@
 import {useState, useEffect, useRef} from "react"
-import  styles from "../styles/Home.module.css" 
+// import  styles from "../styles/Home.module.css" 
 import ContentEditable from "react-contenteditable"
 
 

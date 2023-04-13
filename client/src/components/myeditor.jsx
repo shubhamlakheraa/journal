@@ -65,7 +65,7 @@ const saveToDB = async (data) => {
   const store = transaction.objectStore(storeName)
   const request = store.put({id: "editorContent", data: data})
 
-  request.onerror = (event) => {
+  request.onerror = (event) => { 
     console.log("Error saving data to database.")
   }
 

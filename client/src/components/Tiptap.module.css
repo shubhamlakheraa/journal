@@ -1,0 +1,46 @@
+.ProseMirror h1::before {
+    content: attr(data-placeholder);
+    float: left;
+    color: #ced4da;
+    pointer-events: none;
+    height: 0;
+  }
+
+/* .ProseMirror div .is-empty:first-child::before {
+    color: #adb5bd;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+  } */
+
+/* .ProseMirror p{
+    background-color: ;
+    
+  } */
+
+  .ProseMirror p:focus-visible{
+    outline: none;
+    border: none;
+    
+  }
+
+  .ProseMirror div:focus-visible{
+    outline: none;
+    border: none;
+  }
+
+  .ProseMirror div{
+    max-width: 450px;
+    
+  }
+.date_time_container{
+    display: flex;
+    color: #37352f;
+    justify-content: space-evenly;
+    font-size: 14px;
+    opacity: 65%;
+}
+
+
+  

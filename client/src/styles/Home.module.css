@@ -124,11 +124,24 @@
  /* float: right; */
 }
 
-.content{
-  display: flex;
-}
+
 
 .editorblock{
   background-color: black;
   color: white;
+}
+
+.blocked{
+  background-color: beige;
+  max-width: 550px;
+  min-width: 500px;
+
+}
+
+.constent{
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
