@@ -6,9 +6,9 @@
 #title{
   color: grey;
   font-size: 64px;
-  position: absolute;
+  /* position: absolute;
   top: 100px;
-  left: 50px;
+  left: 50px; */
 }
 .subhead{
   color: grey;
@@ -35,40 +35,9 @@
   display: flex;
 }
 
-.DraftEditor-root{
-    width: 100% ;
-    /* max-width: 600px; */
-    height: 100%;
-    overflow: hidden;
-    background-color: beige;
-    /* max-height: 400px; */
-    min-height:400px;
-    overflow-y: auto;
-    padding: 30px;
-    
-}
 
-/* .DraftEditor-root {
-  height: 500px;
-  overflow-y: scroll;
-  scrollbar-width: none; 
-} */
 
-.DraftEditor-root::-webkit-scrollbar {
-  display: none; 
-}
 
-/* .DraftEditor-root:hover {
-  scrollbar-width: auto; 
-} */
-
-/* .DraftEditor-root:hover::-webkit-scrollbar {
-  display: block; 
-} */
-
-/* .DraftEditor-root{
-  .public
-} */
 
 .editorbuttons{
   text-align: center;
@@ -81,7 +50,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 180px;
+  
+  width: 15%;
   height: 100%;
   background-color: beige;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -139,9 +109,14 @@
 }
 
 .constent{
-  height: 100vh;
-  margin: 0;
+  /* height: 100vh; */
+  /* margin: 0; */
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.editorcontainer h4{
+  color: #37352f;
+  font-size: 14px;
+  opacity: 65%;
 }

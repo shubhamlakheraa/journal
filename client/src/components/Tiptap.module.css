@@ -31,15 +31,32 @@
   }
 
   .ProseMirror div{
-    max-width: 450px;
+     width: 550px;
+    /* min-width: 450px;  */
+    /* display: flex; */
+   
     
   }
-.date_time_container{
+/* .date_time_container{
     display: flex;
     color: #37352f;
     justify-content: space-evenly;
     font-size: 14px;
     opacity: 65%;
+} */
+
+.itrcontainer{
+    display: flex;
+    align-items: center;
+}
+
+.menubarcontainer{
+    width: 25%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-color: beige;
 }
 
 

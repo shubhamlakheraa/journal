@@ -8,6 +8,7 @@ export default Node.create({
     group: 'block',
   
     atom: true,
+    selectable: false,
   
     addAttributes() {
       return {
