@@ -44,7 +44,7 @@ export default function SignIn() {
       console.log(res)
     })
     setUser(userObject)
-    Router.push('/title')
+    Router.push('/')
   }
   useEffect(()=>{
     // console.log(window.window.google[accounts])

@@ -4,32 +4,22 @@
 }
 
 #title{
-  color: grey;
+  color:  #141414;
   font-size: 64px;
-  /* position: absolute;
-  top: 100px;
-  left: 50px; */
+  
+
 }
-.subhead{
-  color: grey;
-}
-.arrange{
+
+/* .arrange{
   display: flex;
-}
+} */
 
 .add{
   border-radius: 50px;
   
 }
 
-/* .texted{
-   background-color: red;
-   width: 50%;
-   height: 400px;
-} */
-/* .mycalendar{
-  margin: 20px;
-} */
+
 
 .containermain{
   display: flex;
@@ -57,9 +47,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 999;
 }
-/* .container{
-  margin: 20px;
-} */
+
 
 .featuresdiv{
   margin: 5px;
@@ -103,22 +91,18 @@
   color: white;
 }
 
-/* .blocked{
-  background-color: beige;
-  max-width: 550px;
-  min-width: 500px;
+.upcomingfeat{
+  pointer-events: none;
+  color: gray;
+}
 
-} */
 
-.constent{
-  /* height: 100vh; */
-  /* margin: 0; */
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+.constent {
+
   display: grid;
   grid-template-columns: 1fr 3fr;
 }
+
 .editorcontainer h4{
   color: #37352f;
   font-size: 14px;
@@ -133,15 +117,6 @@
   margin-left: 2.5rem;
 }
 
-/* .editorcontainer{
-  flex-grow: 1;
-  margin-left: 200px; 
-  transition: margin-left 0.3s ease-in-out; 
-} */
-
-/* .consentopen{
-  grid-template-columns: ;
-} */
 
 
 .userprofile{
@@ -155,4 +130,91 @@
 .featurename{
   display: flex;
   align-items: center;
+}
+
+
+
+.authbuttondiv{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  bottom: -340px;
+
+}
+
+
+
+.authbuttonimg{
+  display: none;
+  margin-right: 5px;
+  
+}
+.authbuttondiv:hover .authbuttonimg{
+  display: block;
+}
+
+.authbutton{
+  
+  margin-left: 5px;
+}
+.constent a:hover{
+  text-decoration: underline;
+}
+
+/* Main Intro Page */
+
+.nav{
+  height: 200px;
+  text-align: right;
+  /* margin-top: 20px; */
+}
+.navlink{
+  border-style: solid;
+  /* padding: 5px; */
+  border-radius: 8px;
+  padding: 5px 10px;
+  
+
+}
+
+.intro{
+  text-align: center;
+}
+
+.introtitle{
+  font-size: 54px;
+  font-weight: 800;
+}
+
+/* My Journal Page */
+
+.journalcontainer{
+  width: 70%;
+}
+.journaldiv{
+  display: flex;
+  align-items: center;
+  
+}
+.journallist{
+  margin-left: 10px;
+}
+
+.everyjournal{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.everyjournal button{
+  background-color: #fcf9ee;
+
+}
+.binimg{
+  display: none;
+}
+
+.everyjournal:hover .binimg{
+  display: block;
+  opacity: 50%;
 }

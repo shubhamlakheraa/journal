@@ -1,6 +1,8 @@
 
 body{
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fcf9ee;
+  color: #141414;
 
 
 }
@@ -33,11 +35,17 @@ ul[data-type="taskList"] li > div {
 }
 
 button{
-  /* border: none; */
+  border: none;
   background-color: white;
 }
-
+/* button:hover{
+  background-color: #d3d3d3;
+  border-radius: 10%;
+} */
 /* .menubarButtons button .blr {
   padding-left: 1rem;
   border-left: 2px solid rgba(#0D0D0D, 0.1);
 } */
+
+
+

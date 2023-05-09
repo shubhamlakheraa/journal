@@ -1,0 +1,78 @@
+// import { useRouter } from "next/router"
+
+// const Post = () => {
+//     const router = useRouter()
+//     const { pid } = router.query
+//     return <p>Post: {pid}</p>
+// }
+
+// export default Post
+import {useEffect, useState, useMemo} from "react"
+import MenuDrawer from "@/components/menuDrawer"
+import Tiptap from "@/components/Editor"
+import Link from "next/link"
+import { getSession } from "next-auth/react"
+import { getServerSession } from "next-auth"
+import { generateHTML } from "@tiptap/html"
+// import { ContentEditor } from "@tiptap/reac"
+import {useEditor, EditorContent, StarterKit, Placeholder,Node, Selection, Color, EditorState, Heading, Document, ListItem, TextStyle, Highlight, Typography, TextAlign, TaskList, TaskItem, Text, Paragraph, Bold} from "../utils/packages"
+import RichTextResolver from 'storyblok-js-client/richTextResolver'
+import styles from "@/styles/Home.module.css"
+// const getPostsByID = require("../../../prisma/posts").getPostsByID
+
+const CustomDocument = Document.extend({
+    content: 'heading block*'
+})
+
+export default function Post({ post }) {
+
+    // const reflect = posts.map((one) => {})
+    const output = useMemo(() => {
+        return generateHTML(post.body, [
+        //   Document,
+        //   Paragraph,
+        //   Text,
+        //   Bold,
+          Color.configure({types: [TextStyle.name, ListItem.name] }),
+                TextStyle.configure({types: [ListItem.name] }),
+                CustomDocument,
+                StarterKit.configure({
+                    document: false,
+                    bulletList: {
+                        keepMarks: true,
+                        keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
+                      },
+                      orderedList: {
+                        keepMarks: true,
+                        keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
+                      },
+                }),
+                TextAlign.configure({
+                    types:['heading', 'paragraph']
+                }),
+                Text,
+                TaskList,
+                TaskItem.configure({
+                    nested: true,
+                }),
+                Paragraph,
+                Highlight,
+                Typography,
+                Placeholder.configure({
+                    placeholder: ({ node }) => {
+                        if (node.type.name === 'heading') {
+                          return 'What’s the title?'
+                        }
+    
+                        return "Can you add some more text."
+                    }
+                }),
+    ])
+     }, [post.body])
+    //  console.log(output)
+    return(
+   <>
+   </>
+       
+    )
+}

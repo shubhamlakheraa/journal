@@ -1,4 +1,4 @@
-export const images = {
+export const myimages = {
     add: require('./plus2.png'),
     statistics: require('./statistics.png'),
     calendar: require('./calendar.png'),
@@ -18,7 +18,11 @@ export const images = {
     italicFont: require('./italic-font.png'),
     list: require('./list.png'),
     blockquote: require('./tab.png'),
-    olist: require('./olist.svg')
+    olist: require('./olist.svg'),
+    login: require('./log-in.png'),
+    logout: require('./log-out.png'),
+    titleJournal: require('./journal2.png'),
+    bin: require('./bin.png'),
 
 
 }

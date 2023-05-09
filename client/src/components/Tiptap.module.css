@@ -50,7 +50,7 @@
     grid-template-columns: 2fr 1fr;
 }
 
-.menubarcontainer{
+/* .menubarcontainer{
     width: 25%;
     position: fixed;
     top: 0;
@@ -58,11 +58,11 @@
     height: 100%;
     background-color: beige;
     
-}
+} */
 
-.menubarcontainer button{
+/* .menubarcontainer button{
     margin: 5px;
-}
+} */
 
 
 .code {
@@ -79,13 +79,14 @@
   .menubarButtons button {
     border-radius: 10%; 
     margin: 5px;
+    background-color: #D3D3D3;
   
   }
-  .menubarButtons button:hover{
+  /* .menubarButtons button:hover{
     border: none;
     background-color: #616161;
     opacity: 50%;
-  }
+  } */
 
   .ProseMirror blockquote {
     padding-left: 1rem;
@@ -109,3 +110,53 @@
       background: none;
       font-size: 0.8rem;
       }
+
+
+.itrcontainer nav{
+  overflow-y: scroll;
+  background-color: #D3D3D3 !important;
+}
+
+.redco{
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 50%;
+}
+.purpleco{
+  width: 15px;
+  height: 15px;
+  background-color: #A020F0;
+  border-radius: 50%;
+}
+
+.greenco{
+  width: 15px;
+  height: 15px;
+  background-color:  #00FF00;
+  border-radius: 50%;
+}
+
+.blueco{
+  width: 15px;
+  height: 15px;
+  background-color:  #0000FF;
+  border-radius: 50%;
+}
+
+.yellowco{
+  width: 15px;
+  height: 15px;
+  background-color:  yellow;
+  border-radius: 50%;
+}
+
+.menubarcontainer{
+  padding-left: 15px;
+  /* background-color: #D3D3D3; */
+}
+
+.savebuttonwrapper{
+  display: flex;
+  justify-content: space-between;
+}
