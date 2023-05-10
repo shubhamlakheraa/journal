@@ -130,7 +130,7 @@ const [journalIsOpen, setJournalIsOpen] = useState(false)
                 
                 <div className={styles.authbuttondiv}>
                 {/* <Image src={myimages.progress} className={styles.featureimg} /> */}
-                {session ? <button className ={styles.authbutton} onClick={() => signOut()}>Sign out</button> : <button onClick={() => signIn('google', { callbackUrl: 'http://localhost:3000/menu_page' })}>Log In</button> }
+                {session ? <button className ={styles.authbutton} onClick={() => signOut()}>Sign out</button> : <button onClick={() => signIn('google', { callbackUrl: 'https://journal-ecru.vercel.app/menu_page' })}>Log In</button> }
                 {/* <button className ={styles.authbutton} onClick={() => signOut()}>Sign out</button> */}
                 {session ? <Image src={myimages.logout} className={styles.authbuttonimg} /> : <Image src={myimages.login} className={styles.authbuttonimg} /> }
                 
