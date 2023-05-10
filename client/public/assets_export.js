@@ -23,6 +23,7 @@ export const myimages = {
     logout: require('./log-out.png'),
     titleJournal: require('./journal2.png'),
     bin: require('./bin.png'),
+    journalCover: require('./cover.png'),
 
 
 }

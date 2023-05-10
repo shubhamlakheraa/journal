@@ -19,8 +19,11 @@ export const getServerSideProps = async ({req, res }) => {
     }
 
     const posts = await getAllPostsByUserID(session?.user?.id)
+
     return {
-        props: { posts },
+        props: {
+           posts : JSON.parse(JSON.stringify(posts)) 
+          },
     }
 }
 
@@ -42,14 +45,18 @@ const [myPostList, setMyPostList] = useState(posts)
             const deletedPost = await res.json()
             // confirmDelete ? setPosts({post: deletedPost, type: "remove"}) : null 
             // confirmDelete ? console.log(deletedPost) : null
-            // if(confirmDelete){
-            //     setMyPostList(myPostList.filter((post) => post.id !== result.id))
-            // }
+            if(confirmDelete){
+                setMyPostList(myPostList.filter((post) => post.id !== result.id))
+            }
         }
         catch(error){
             console.log(error)
         }
     }
+    useEffect(() => {
+      // Update the post list when myPostList changes
+      setMyPostList(posts);
+    }, [posts]);
 
 
 const postList = myPostList.map((res, index) => (

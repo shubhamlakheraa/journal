@@ -114,8 +114,14 @@
 
 .itrcontainer nav{
   overflow-y: scroll;
-  background-color: #D3D3D3 !important;
+  /* background-color: #D3D3D3 !important; */
 }
+.menubarcontainer button{
+  background-color: white;
+}
+/* .menubarcontainer button:active{
+  background-color: black;
+} */
 
 .redco{
   width: 15px;

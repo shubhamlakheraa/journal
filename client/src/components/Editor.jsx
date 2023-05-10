@@ -1,20 +1,20 @@
-import{Children, useEffect, useState,useRef} from "react"
+import{ useState } from "react"
 import styless from "./Tiptap.module.css"
 import 'react-modern-drawer/dist/index.css'
-import * as htmlToImage from "html-to-image"
 import {useEditor, EditorContent, StarterKit, Placeholder,Node, Selection, Color, EditorState, Heading, Document, ListItem, TextStyle, Highlight, Typography, TextAlign, TaskList, TaskItem, Text} from "../utils/packages"
-import MyLogin from "./loginBtn"
-import { useSession } from "next-auth/react"
-import RandomID from "../modules/randomID"
 import ExtraMenu from "./menu/extraMenu"
 import MenuBar from "./menu/mainMenu"
-import RetrieveContent from "../utils/content"
 import dynamic from "next/dynamic"
-
 const DynamicDateTime = dynamic(() => import("../utils/dynamicDate"), { ssr: false });
 const CustomDocument = Document.extend({
     content: 'heading block*'
 })
+
+ function getTime() {
+  const date = new Date();
+  const options = { month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true };
+  return date.toLocaleString('en-US', options);
+}
 
 
 const Paragraph = Node.create({
@@ -36,24 +36,14 @@ const Paragraph = Node.create({
 
 const Tiptap = (props) => {
 
-  // let debounced;
-
-
 
   // const {data: session} = useSession
 const [isSaved, setIsSaved] = useState(false)
 const [postData, setPostData] = useState({
   title: "Initial",
   body: {},
-  createdAt: ""
+  
 })
-
-
-
-
-
-
-
 
 
 const handleOnSave = async () => {
@@ -80,12 +70,11 @@ const handleOnSave = async () => {
 }
 
 
-
-
 const handleUpdate = async() => {
 
   if(props.postdata){
     const upPost = props.postdata
+    upPost.title = postData.title
     upPost.body = postData.body
     upPost.userId = props.postdata.user.id
     
@@ -102,9 +91,6 @@ const handleUpdate = async() => {
   
   }
 }
-
-
-
 
 
  const temp = ``
@@ -156,28 +142,32 @@ const handleUpdate = async() => {
         ${props.output? props.output: temp}
    
       `,
+      // content:  typeof window !== 'undefined' ? JSON.parse(window.localStorage.getItem('editor-content') || '{}') : {},
    
         
 
       
         onUpdate(){
-            const jsonContent = editor.getJSON()
+          // const jsonContent = JSON.stringify(editor.getJSON());
+          const jsonContent = editor.getJSON()
+          setPostData({
+            title: jsonContent?.content[0]?.content[0]?.text  ,
+            body: jsonContent,
+            createdAt: new Date().toJSON(),
+          })
+          // window.localStorage.setItem('editor-content', jsonContent)
+    
+
+            
             // console.log(jsonContent)
             
-            setPostData({
-              title: jsonContent?.content[0]?.content[0]?.text  ,
-              body: jsonContent,
-            })
+            
             
             
             
         }
     })
-
-
-
-    
-    
+    // console.log(<DynamicDateTime />)
 
     return (
       <div className={styless.itrcontainer}>

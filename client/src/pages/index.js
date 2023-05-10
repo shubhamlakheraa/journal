@@ -1,12 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-// import Pencil from './pencil'
-// import Title from './title'
-// import Main from './write'
 import Link from 'next/link'
-// const inter = Inter({ subsets: ['latin'] })
+import Image from "next/image"
+import { myimages } from "../../public/assets_export"
 
 export default function Home() {
   return (
@@ -21,15 +17,21 @@ export default function Home() {
 
 
       <div className={styles.arrange}>
+
         <div className={styles.nav}>
+          <Image src={myimages.journalCover} width={200}/>
           <Link href="/menu_page" className={styles.navlink}>Try Journal</Link>
         </div>
+
         <div className={styles.intro}>
           <h1 className={styles.introtitle}>
-          Unlock your thoughts and unleash your creativity with our Journal app.
+          Unlock your thoughts and unleash your creativity with our <Link href="/menu_page">Journal</Link> app.
           </h1>
         </div>
+
       </div>
+
+    
     </>
   );
 }

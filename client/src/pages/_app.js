@@ -1,8 +1,7 @@
 import '@/styles/globals.css'
-// import "@blocknote/core/dist/styles.css"
-import { Roboto } from "next/font/google"
+
 import {SessionProvider} from "next-auth/react"
-import { PostProvider } from '@/modules/AppContext'
+
 
 export default function App({ 
    Component,

@@ -1,16 +1,10 @@
 import Link from "next/link"
 import Image from "next/image"
 import styles from "@/styles/Home.module.css"
-import { Roboto } from "next/font/google"
 import { myimages } from "../../public/assets_export"
-import dynamic from "next/dynamic"
-import Tiptap from "@/components/Editor"
-import {useEffect, useState} from "react"
-import {motion, AnimatePresence} from "framer-motion"
-import MiniDrawer from "@/components/menuDrawer"
+import { useState} from "react"
 import Drawer from "react-modern-drawer"
 import 'react-modern-drawer/dist/index.css'
-// import JournalMainPage from "./journalMainPage"
 import { useSession } from "next-auth/react"
 import {v4 as uuidv4} from "uuid"
 
@@ -78,11 +72,11 @@ const [journalIsOpen, setJournalIsOpen] = useState(false)
                     Home
                   </Link>
                   </div>
-                  <div>
+                  {/* <div>
                   <button onClick={handleclick}>
                     <Image src={myimages.add} id={styles.addbutton} />
                   </button>
-                  </div>
+                  </div> */}
                   
                 </div>
                 
@@ -93,11 +87,11 @@ const [journalIsOpen, setJournalIsOpen] = useState(false)
                     Journal
                   </Link>
                   </div>
-                  <div>
+                  {/* <div>
                   <button onClick={handleclick}>
                     <Image src={myimages.add} id={styles.addbutton} />
                   </button>
-                  </div>
+                  </div> */}
                   
                 </div>
                 <div className={styles.featuresdiv}>

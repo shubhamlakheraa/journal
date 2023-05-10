@@ -164,16 +164,27 @@
 /* Main Intro Page */
 
 .nav{
+  display: flex;
   height: 200px;
   text-align: right;
+  justify-content: space-between;
+  
   /* margin-top: 20px; */
 }
 .navlink{
   border-style: solid;
   /* padding: 5px; */
+  height: 20px;
   border-radius: 8px;
   padding: 5px 10px;
+  position: relative;
+  top: 30px;
+  right: 60px;
   
+}
+.navlink:hover{
+  background-color: #141414;
+  color: white;
 
 }
 
@@ -184,6 +195,10 @@
 .introtitle{
   font-size: 54px;
   font-weight: 800;
+}
+
+.introtitle a:hover{
+  text-decoration: underline;
 }
 
 /* My Journal Page */
@@ -206,10 +221,11 @@
   margin: 10px;
 }
 
-.everyjournal button{
-  background-color: #fcf9ee;
+.everyjournal button:hover{
+  background-color: #EDECE9;
 
 }
+
 .binimg{
   display: none;
 }
@@ -217,4 +233,12 @@
 .everyjournal:hover .binimg{
   display: block;
   opacity: 50%;
+  
+}
+
+.everyjournal:hover{
+  background-color: #EDECE9;
+  /* border-radius: px; */
+  
+  /* opacity: 50%; */
 }

@@ -1,19 +1,13 @@
-import{Children, useEffect, useState} from "react"
+import{useState} from "react"
 import styless from "../Tiptap.module.css"
 import { myimages } from "../../../public/assets_export" 
 import Image from "next/image"
-import {BubbleMenu} from "@tiptap/react"
 import Drawer from "react-modern-drawer"
 import 'react-modern-drawer/dist/index.css'
-import dynamic from "next/dynamic"
-import EmojiPicker, {EmojiStyle, EmojiClickData, Emoji} from "emoji-picker-react"
-import { yellow } from "@mui/material/colors"
 import headbuttons from "@/utils/menubarClass"
-import {useEditor, EditorContent, StarterKit, Placeholder,Node, Selection, Color, EditorState, Heading, Document, ListItem, TextStyle, Highlight, Typography, TextAlign, TaskList, TaskItem, Text} from "../../utils/packages"
-import MyLogin from "../loginBtn"
-import { useSession } from "next-auth/react"
-// import { usePost, useDispatchPost, usePosts, useDispatchPosts } from "../modules/AppContext"
-// import RandomID from "../modules/randomID"
+
+
+
 
 const MenuBar = ({ editor }) => {
     const [isOpen, setIsOpen] = useState(false)
@@ -42,7 +36,7 @@ const MenuBar = ({ editor }) => {
     const buttonElements = headbuttons.map((buttonData, index) => (
 
       
-      <div className={styless.menubarButtons}>
+      <div key={index} className={styless.menubarButtons}>
         <p>{buttonData.name}</p>
         {buttonData.name === 'Align' ? 
         

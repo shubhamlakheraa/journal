@@ -3,17 +3,11 @@ import Image from "next/image"
 import styles from "@/styles/Home.module.css"
 import { Roboto } from "next/font/google"
 import { myimages } from "../../public/assets_export"
-import dynamic from "next/dynamic"
 import Tiptap from "@/components/Editor"
-import {useEffect, useState} from "react"
-import {motion, AnimatePresence} from "framer-motion"
-import MiniDrawer from "@/components/menuDrawer"
+import {useState} from "react"
 import Drawer from "react-modern-drawer"
 import 'react-modern-drawer/dist/index.css'
-import JournalMainPage from "./my_journal"
 import { useSession, signIn, signOut } from "next-auth/react"
-// import MenuDrawer from "../components/menuDrawer"
-import uniqid from "uniqid"
 import { useRouter } from "next/router"
 
 

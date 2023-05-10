@@ -1,12 +1,4 @@
-// import { useRouter } from "next/router"
 
-// const Post = () => {
-//     const router = useRouter()
-//     const { pid } = router.query
-//     return <p>Post: {pid}</p>
-// }
-
-// export default Post
 import {useEffect, useState, useMemo} from "react"
 import MenuDrawer from "@/components/menuDrawer"
 import Tiptap from "@/components/Editor"
@@ -16,7 +8,7 @@ import { getServerSession } from "next-auth"
 import { generateHTML } from "@tiptap/html"
 // import { ContentEditor } from "@tiptap/reac"
 import {useEditor, EditorContent, StarterKit, Placeholder,Node, Selection, Color, EditorState, Heading, Document, ListItem, TextStyle, Highlight, Typography, TextAlign, TaskList, TaskItem, Text, Paragraph, Bold} from "../../utils/packages"
-import RichTextResolver from 'storyblok-js-client/richTextResolver'
+
 import styles from "@/styles/Home.module.css"
 const getPostsByID = require("../../../prisma/posts").getPostsByID
 
@@ -41,7 +33,9 @@ export const getServerSideProps = async ({ params }) => {
     console.log(postId)
     const post = await getPostsByID(postId)
     return {
-            props: { post },
+            props: {
+                 post : JSON.parse(JSON.stringify(post)) 
+                },
         }
 }
 
