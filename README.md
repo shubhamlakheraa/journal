@@ -23,6 +23,7 @@ The Journal is built using the following technologies:
 - **Next-Auth**: Next-Auth is an authentication library for Next.js applications. It simplifies the implementation of authentication and authorization functionalities, providing support for various authentication providers and strategies.
 - **TipTap**: TipTap is a modern and customizable block editor for the web. It provides a rich text editing experience, allowing users to format their journal entries with ease and flexibility.
 
+## Architecture
 The Journal web application follows a modern and scalable architecture that leverages the benefits of the technologies mentioned above. Here's a detailed explanation of how each technology interacts with the others:
 
 1. **Next.js**: Next.js serves as the front-end framework for the Journal web application. It provides server-side rendering and static site generation capabilities, allowing for fast page loads and a smooth user experience. Next.js interacts with the Prisma ORM and Next-Auth for data retrieval, authentication, and authorization functionalities.
